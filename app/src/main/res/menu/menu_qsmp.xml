@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+
+    <item android:id="@+id/menu_username"
+        android:icon="@mipmap/ic_person_line"
+        android:title="Username"
+        />
+
+
+    <item android:id="@+id/menu_rudderid"
+        android:icon="@mipmap/ic_cloud"
+        android:title="RudderId"
+        android:iconTint="#BEBEBE"
+        />
+
+    <item android:id="@+id/re_authtnticate"
+        android:icon="@mipmap/ic_re_authentication"
+        android:title="Reauthenticate"
+        android:iconTint="#BEBEBE"
+        />
+
+    <item android:id="@+id/profile"
+        android:icon="@mipmap/ic_person_line"
+        android:title="Profile"
+
+        />
+    <item android:id="@+id/logout"
+        android:icon="@mipmap/ic_menu_logout"
+        android:title="Logout"
+        android:iconTint="#BEBEBE"
+        />
+
+    <item android:id="@+id/about"
+        android:icon="@mipmap/ic_about"
+        android:title="About"
+        android:iconTint="#BEBEBE"
+        />
+
+
+</menu>

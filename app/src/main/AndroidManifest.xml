@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.qsmp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:name=".MyApplicationApollo"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_qsmp_flow_app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_qsmp_flow_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Qsmp"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".Call_Interface_Scan_Method_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Network_Detail_Activity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+        <activity
+            android:name=".Wifi_Auto_Connect_Activity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+        <activity
+            android:name=".About_Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+        <activity
+            android:name=".ErrorPage_Qn_Activtiy"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+        <activity
+            android:name=".Rudder_IdName_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+        <activity
+            android:name=".Scan_Extra_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+        <activity
+            android:name=".Qsmp_Dashboard_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+        <activity
+            android:name=".Scan_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Qsmp.NoActionBar" />
+
+        <service
+            android:name="com.qsmplibrary.altbeacon.beacon.service.BeaconService"
+            android:exported="true"
+            tools:node="replace">
+            <meta-data
+                android:name="longScanForcingEnabled"
+                android:value="true" />
+        </service>
+        <service
+            android:name=".LocationTracker"
+            android:exported="true" />
+    </application>
+
+</manifest>

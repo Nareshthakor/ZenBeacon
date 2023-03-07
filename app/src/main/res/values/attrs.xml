@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension"/>
+        <attr name="rb_radius" format="dimension"/>
+        <attr name="rb_duration" format="integer"/>
+        <attr name="rb_rippleAmount" format="integer"/>
+        <attr name="rb_scale" format="float"/>
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0"/>
+            <enum name="strokeRipple" value="1"/>
+        </attr>
+    </declare-styleable>
+
+
+    <attr format="color" name="dotsColor"/>
+    <attr format="color" name="selectedDotColor"/>
+    <attr format="color" name="dotsStrokeColor"/>
+    <attr format="dimension" name="dotsSize"/>
+    <attr format="float" name="dotsWidthFactor"/>
+    <attr format="dimension" name="dotsSpacing"/>
+    <attr format="dimension" name="dotsCornerRadius"/>
+    <attr format="dimension" name="dotsStrokeWidth"/>
+    <attr format="float" name="stiffness"/>
+    <attr format="float" name="dampingRatio"/>
+    <attr format="boolean" name="progressMode"/>
+    <attr format="boolean" name="dotsClickable"/>
+    <attr name="dots_filled" format="boolean"/>
+    <attr name="dots_all" format="boolean"/>
+
+    <declare-styleable name="DotsIndicator">
+        <attr name="dotsColor"/>
+        <attr name="selectedDotColor"/>
+        <attr name="dotsSize"/>
+        <attr name="dotsWidthFactor"/>
+        <attr name="dotsSpacing"/>
+        <attr name="dotsCornerRadius"/>
+        <attr name="progressMode"/>
+        <attr name="dotsClickable"/>
+        <attr name="dotsElevation" format="dimension"/>
+        <attr name="dots_all"/>
+    </declare-styleable>
+
+    <declare-styleable name="SpringDotsIndicator">
+        <attr name="dotsColor"/>
+        <attr name="dotsSize"/>
+        <attr name="dotsSpacing"/>
+        <attr name="dotsCornerRadius"/>
+        <attr name="dotsStrokeWidth"/>
+        <attr name="dotsStrokeColor"/>
+        <attr name="stiffness"/>
+        <attr name="dampingRatio"/>
+        <attr name="dotsClickable"/>
+        <attr name="dots_filled"/>
+    </declare-styleable>
+
+    <declare-styleable name="WormDotsIndicator">
+        <attr name="dotsColor"/>
+        <attr name="dotsSize"/>
+        <attr name="dotsSpacing"/>
+        <attr name="dotsCornerRadius"/>
+        <attr name="dotsStrokeWidth"/>
+        <attr name="dotsStrokeColor"/>
+        <attr name="dotsClickable"/>
+        <attr name="dots_filled"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="PasswordEditText">
+        <attr name="pet_iconShow" format="integer" />
+        <attr name="pet_iconHide" format="integer" />
+        <attr name="pet_hoverShowsPw" format="boolean" />
+        <attr name="pet_nonMonospaceFont" format="boolean" />
+        <attr name="pet_disableIconAlpha" format="boolean" />
+    </declare-styleable>
+
+</resources>

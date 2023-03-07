@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:focusable="true">
+
+        <LinearLayout
+            android:id="@+id/layout_username"
+            android:background="@drawable/edittext_outer_border"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:imeOptions="actionNext"
+                android:hint="SSID Name"
+                android:textColorHint="#40343434"
+                android:id="@+id/edt_ssid_name"
+                android:inputType="text"
+                android:layout_weight="0.8"
+                android:text="Taj VIP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_password"
+            android:background="@drawable/edittext_outer_border"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.qsmp.PasswordEditText
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:imeOptions="actionNext"
+                android:hint="Password"
+                android:text=""
+                android:textColorHint="#40343434"
+                android:id="@+id/edt_password"
+                android:inputType="textPassword"
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_crm_number"
+            android:background="@drawable/edittext_outer_border"
+            android:weightSum="1"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:imeOptions="actionNext"
+                android:hint="Enter CRM Number"
+                android:text=""
+                android:textColorHint="#40343434"
+                android:id="@+id/edt_crm_number"
+                android:inputType="text"
+                android:layout_weight="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textAllCaps="false"
+                android:padding="15dp"
+                android:id="@+id/btn_save_confrigration"
+                android:layout_alignParentBottom="true"
+                android:textSize="16dp"
+                app:cornerRadius="32dp"
+                app:elevation="0dp"
+                app:backgroundTint="@color/primary"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <View
+        android:id="@+id/divider_main"
+        android:background="@color/default_fragment_bg_color"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="5.0dip"
+        android:layout_marginBottom="2.0dip"
+
+        />
+
+
+</LinearLayout>
