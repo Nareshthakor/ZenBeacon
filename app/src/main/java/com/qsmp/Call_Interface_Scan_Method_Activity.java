@@ -19,7 +19,7 @@ public class Call_Interface_Scan_Method_Activity extends AppCompatActivity imple
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_interface_scan_method);
 
-        hpBeaconController = new BeaconController(new Call_Interface_Scan_Method_Activity(),Call_Interface_Scan_Method_Activity.this,"f06a8c12f45f80721e5e4777bd8c5df1",Qsmp_Dashboard_Activity.class);
+        hpBeaconController = new BeaconController(new Call_Interface_Scan_Method_Activity(),Call_Interface_Scan_Method_Activity.this,"f06a8c12f45f80721e5e4777bd8c5df1",Qsmp_Dashboard_Activity.class,true);
        // hpBeaconController.print(MESSAGE_TO_PRINT);
 
         getBEaconData();

@@ -64,16 +64,18 @@ public class BeaconController implements Printer, MonitorNotifier {
     String Str_main_key_Token="";
     Class<?> m_class;
     public static final Region wildcardRegion = new Region("all-beacons", null, null, null);
+    boolean beacon_scan_bg=false;
     /*public PrinterController(Printer printer) {
         this.printer = printer;
     }*/
 
 
-    public BeaconController(Printer printer, Context context,String key,Class<?> classs_data) {
+    public BeaconController(Printer printer, Context context,String key,Class<?> classs_data,boolean _beacon_scan_bg) {
         this.printer = printer;
         this.m_context = context;
         this.Str_main_key_Token = key;
         this.m_class = classs_data;
+        this.beacon_scan_bg = _beacon_scan_bg;
 
         getBeacon_Validation(Str_main_key_Token);
 
@@ -247,6 +249,8 @@ public class BeaconController implements Printer, MonitorNotifier {
         beaconManager = BeaconManager.getInstanceForApplication(m_context);
         beaconManager.removeAllRangeNotifiers();
 
+
+
         Log.d("Call_scan_method","getscan_allBeacons");
         beaconManager.getBeaconParsers().clear();
 
@@ -254,6 +258,17 @@ public class BeaconController implements Printer, MonitorNotifier {
         beaconManager.getBeaconParsers().add(new BeaconParser().
                 setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24"));
 
+        if(beacon_scan_bg)
+        {
+            beaconManager.enableForegroundServiceScanning(start_foregroundservice_notificattion().build(), 456);
+            beaconManager.setEnableScheduledScanJobs(false);
+            beaconManager.setBackgroundBetweenScanPeriod(0);
+            beaconManager.setBackgroundScanPeriod(1100);
+        }
+        else
+        {
+            beaconManager.disableForegroundServiceScanning();
+        }
 
         RangeNotifier rangeNotifier = new RangeNotifier() {
             @Override
@@ -405,9 +420,45 @@ public class BeaconController implements Printer, MonitorNotifier {
         beaconManager.startRangingBeacons(wildcardRegion);
         beaconManager.addRangeNotifier(rangeNotifier);
 
+
+
+
+
         //beaconManager.startRangingBeacons(BeaconReferenceApplication.wildcardRegion);
     }
 
+
+    public Notification.Builder start_foregroundservice_notificattion()
+    {
+        Notification.Builder builder = new Notification.Builder(m_context);
+        builder.setSmallIcon(R.drawable.ic_launcher_background);
+        builder.setContentTitle("Scanning for Beacons");
+        //Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent();
+        PendingIntent pendingIntent=null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+
+            pendingIntent = PendingIntent.getActivity(m_context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+        }
+        else
+        {
+            pendingIntent = PendingIntent.getActivity(m_context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+
+        //PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE);
+        builder.setContentIntent(pendingIntent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("My Notification Channel ID",
+                    "My Notification Name", NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription("My Notification Channel Description");
+            NotificationManager notificationManager = (NotificationManager) m_context.getSystemService(
+                    Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(channel);
+            builder.setChannelId(channel.getId());
+        }
+
+        return builder;
+    }
 
     public void set_view_pager_data_beacon(String uuid)
     {

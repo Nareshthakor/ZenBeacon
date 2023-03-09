@@ -183,7 +183,7 @@ public class MyApplicationApollo extends Application
         });*/
 
 
-        beaconManager.enableForegroundServiceScanning(start_foregroundservice_notificattion().build(), 456);
+        //beaconManager.enableForegroundServiceScanning(start_foregroundservice_notificattion().build(), 456);
 
 
         // For the above foreground scanning service to be useful, you need to disable
