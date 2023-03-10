@@ -1,4 +1,4 @@
-# ZenBeacon
+# QuantumUSB-BluetoothBeacon
 
 [![](https://jitpack.io/v/Nareshthakor/ZenBeacon.svg)](https://jitpack.io/#Nareshthakor/ZenBeacon)
 
