@@ -24,7 +24,7 @@ allprojects {
 
 // Target module's build.gradle:
 dependencies {
-    implementation 'com.github.Nareshthakor:ZenBeacon:1.0.0'
+    implementation 'com.gitlab.qnspl:quantumusb-bluetoothbeacon-android:e437e7a219'
 }
 ```
 
